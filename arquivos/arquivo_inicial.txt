@@ -1,0 +1,8 @@
+All Users                 8192            
+Default                   8192            
+Default User              8192            
+desktop.ini               174             
+Gustavo                   28672           
+Public                    4096            
+Todos os Usuários         8192            
+Usuário Padrão            8192            
