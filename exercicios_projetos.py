@@ -38,6 +38,18 @@ def gerar_relatorio(lista: list, espaco_total:float, nome_arquivo: str):
         novo_relatorio.close()
         
         
+def gerar_arquivo_html(lista: list, espaco_total:float) -> None:
+    with open(f'./arquivos/relatorio.html','w') as novo_relatorio:
+        novo_relatorio.write('<p> ACME Inc.           Uso do espaço em disco pelos usuários <p>')
+        novo_relatorio.write('<p>' + '-' * 70 + '<p>')
+        novo_relatorio.write("<p> {:<5} {:<15} {:<25} {:<15} <p>".format('Nr.', 'Usuário', 'Espaço utilizado', r'% do uso'))
+        for i in lista:
+            novo_relatorio.write("<p>{:<5} {:<15} {:<25} {:<15}<p>".format(lista.index(i), i[0], str(i[1]) + ' MB',
+                                                                       str(i[2]) + ' %'))
+        novo_relatorio.write(f'<p>Espaço total ocupado: {espaco_total} MB <p>')
+        novo_relatorio.write(f'<p>Espaço médio ocupado: {round(espaco_total/len(lista))} MB<p>')
+        novo_relatorio.close()
+        
 def gerar_arquivo_inicial() -> None:
     base_path_name = 'C:\\Users'
     
@@ -67,5 +79,6 @@ if __name__:
     
     gerar_arquivo_inicial()
     
+    gerar_arquivo_html(usuarios_bytes, espaco_total)
     
     print('Finish')
