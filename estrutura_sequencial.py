@@ -1,5 +1,7 @@
 import math
 
+#https://wiki.python.org.br/EstruturaSequencial
+
 #1
 def aloMundo():
     print("Alo Mundo")
@@ -107,7 +109,8 @@ def valor_hora(valor: float):
     inss = valor * (8/100)
     sindicato = valor * (5/100)
     salario_liquido =salario_bruto - (ir + inss + sindicato)
-    print('+ Salário Bruto : R${0} \n- IR (11%) : R${1} \n- INSS (8%) : R${2} \n- Sindicato ( 5%) : R${3} \n= Salário Liquido : R${4}'
+    print('+ Salário Bruto : R${0} \n- IR (11%) : R${1} \n- INSS (8%) : R${2} \n- Sindicato ( 5%) : R${3} \n= Salário '
+          'Liquido : R${4} '
           .format(salario_bruto, ir, inss, sindicato, salario_liquido))  
     
 #valor_hora(20)
